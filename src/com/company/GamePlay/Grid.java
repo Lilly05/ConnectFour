@@ -1,19 +1,17 @@
 package com.company.GamePlay;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
 public class Grid {
     private String[][] grid;
 
     public Grid() {
         this.grid = new String[][]{
-                {"X", "X", "X", "X", "X", "X", "X"},
-                {"X", "X", "X", "X", "X", "X", "X"},
-                {"X", "X", "X", "X", "X", "X", "X"},
-                {"X", "X", "X", "X", "X", "X", "X"},
-                {"X", "X", "X", "X", "X", "X", "X"},
-                {"X", "X", "X", "X", "X", "X", "X"}
+                {"1", "2", "3", "4", "5", "6", "7"},
+                {"_", "_", "_", "_", "_", "_", "_"},
+                {"_", "_", "_", "_", "_", "_", "_"},
+                {"_", "_", "_", "_", "_", "_", "_"},
+                {"_", "_", "_", "_", "_", "_", "_"},
+                {"_", "_", "_", "_", "_", "_", "_"},
+                {"_", "_", "_", "_", "_", "_", "_"}
         };
     }
 
@@ -33,8 +31,8 @@ public class Grid {
         return this.grid.length;
     }
 
-    public void setGrid(String symbol, int column, int row) {
-        this.grid[column][row] = symbol;
+    public void setGrid(Spot.Symbol symbol, int column, int row) {
+        this.grid[column][row] = symbol.toString();
     }
 
     @Override
