@@ -37,13 +37,15 @@ public class Main {
         while(true) {
             System.out.println(player1 + " enter the number of the column where you want to set your symbol");
             spot = scanner.nextInt();
-            spotPlayer1.setSymbol(spot - 1);
+            spotPlayer1.setSymbol(spot -1);
             System.out.println(grid);
 
             System.out.println(player2 + " enter the number of the column where you want to set your symbol");
             spot = scanner.nextInt();
-            spotPlayer2.setSymbol(spot - 1);
+            spotPlayer2.setSymbol(spot-1);
             System.out.println(grid);
+
+
         }
     }
 }

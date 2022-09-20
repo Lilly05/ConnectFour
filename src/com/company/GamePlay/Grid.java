@@ -46,4 +46,18 @@ public class Grid {
         }
         return temp;
     }
+
+    public boolean winGame(){
+        for(int column = 0; column < grid.length; column++) {
+            for (int row = 0; row < grid[1].length; row++) {
+                if(grid[column][row].equals(Spot.Symbol.O)){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -1,5 +1,7 @@
 package com.company.GamePlay;
 
+import java.util.Scanner;
+
 public class Spot {
     public enum Symbol{
         X, O
@@ -21,9 +23,9 @@ public class Spot {
         this.setColumn(column);
         boolean isSymbolSet = false;
         for (int i = 0; i < this.grid.getGridLength(); i++) {
-            for (int row = 6; i > 1; row--) { // For the symbol to be at the bottom, not at the top of the column
-                if (this.grid.getExactField(row, column).equals("_")) {
-                    this.grid.setGrid(this.symbol, row, column);
+            for (int row = 6; row > 0; row--) { // For the symbol to be at the bottom, not at the top of the column
+                if (this.grid.getExactField(row, this.column).equals("_")) {
+                    this.grid.setGrid(this.symbol, row, this.column);
                     isSymbolSet = true;
                     break;
                 }
@@ -47,6 +49,11 @@ public class Spot {
     }
 
     public void setColumn(int column){
+            while(column > 6 || column < 0){
+                System.out.println("Please enter a column number between 1 and 7");
+                Scanner scanner = new Scanner(System.in);
+                column = scanner.nextInt() -1;
+            }
         this.column = column;
     }
 }
