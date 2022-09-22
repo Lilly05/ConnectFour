@@ -40,7 +40,8 @@ public class Main {
             spotPlayer1.setSymbol(spot -1);
             System.out.println(grid);
             if(grid.winGame()){
-                winGameScreen();
+                winGameScreen(player1);
+                break;
             }
 
             System.out.println(player2 + " enter the number of the column where you want to set your symbol");
@@ -48,12 +49,13 @@ public class Main {
             spotPlayer2.setSymbol(spot-1);
             System.out.println(grid);
             if(grid.winGame()){
-                winGameScreen();
+                winGameScreen(player2);
+                break;
             }
         }
     }
 
-    public static void winGameScreen(){
-        System.out.println("You won!!");
+    public static void winGameScreen(String player){
+        System.out.println("You won "+ player + " congratulations!");
     }
 }
