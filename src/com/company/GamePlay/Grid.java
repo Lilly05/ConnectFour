@@ -48,13 +48,24 @@ public class Grid {
     }
 
     public boolean winGame(){
-        for(int column = 0; column < grid.length; column++) {
-            for (int row = 0; row < grid[1].length; row++) {
-                if(grid[column][row].equals(Spot.Symbol.O)){
-                    return true;
+        int countSymbolsO = 0;
+        int countSymbolsX = 0;
+       for(int column = 0; column < grid.length; column++) {
+            for (int row = 0; row < grid[column].length; row++) {
+                if(grid[column][row].equals(Spot.Symbol.X.toString())){
+                    countSymbolsX++;
+                    if(countSymbolsX == 4) {
+                        return true;
+                    }
+                }else if(grid[column][row].equals(Spot.Symbol.O.toString())){
+                    countSymbolsO++;
+                    if(countSymbolsO == 4) {
+                        return true;
+                    }
                 }
                 else{
-                    return false;
+                    countSymbolsX = 0;
+                    countSymbolsO = 0;
                 }
             }
         }

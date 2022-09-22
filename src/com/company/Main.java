@@ -39,13 +39,21 @@ public class Main {
             spot = scanner.nextInt();
             spotPlayer1.setSymbol(spot -1);
             System.out.println(grid);
+            if(grid.winGame()){
+                winGameScreen();
+            }
 
             System.out.println(player2 + " enter the number of the column where you want to set your symbol");
             spot = scanner.nextInt();
             spotPlayer2.setSymbol(spot-1);
             System.out.println(grid);
-
-
+            if(grid.winGame()){
+                winGameScreen();
+            }
         }
+    }
+
+    public static void winGameScreen(){
+        System.out.println("You won!!");
     }
 }
