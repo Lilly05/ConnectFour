@@ -88,6 +88,9 @@ public class Grid {
                    if (countSymbolsO == 4){
                        return true;
                    }
+               }else{
+                   countSymbolsX = 0;
+                   countSymbolsO = 0;
                }
            }
        }
