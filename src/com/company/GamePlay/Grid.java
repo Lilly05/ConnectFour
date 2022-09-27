@@ -52,13 +52,16 @@ public class Grid {
         int countSymbolsX = 0;
        for(int column = 0; column < grid.length; column++) {
             for (int row = 0; row < grid[column].length; row++) {
+                // Checks if you won horizontal
                 if(grid[column][row].equals(Spot.Symbol.X.toString())){
                     countSymbolsX++;
+                    countSymbolsO = 0;
                     if(countSymbolsX == 4) {
                         return true;
                     }
                 }else if(grid[column][row].equals(Spot.Symbol.O.toString())){
                     countSymbolsO++;
+                    countSymbolsX = 0;
                     if(countSymbolsO == 4) {
                         return true;
                     }
@@ -69,6 +72,25 @@ public class Grid {
                 }
             }
         }
+       // Checks if you won vertical
+       for(int row = 0; row < grid[1].length; row++){
+           for(int column = 0; column < grid.length; column++){
+               if(grid[column][row].equals(Spot.Symbol.X.toString())){
+                   countSymbolsX++;
+                   countSymbolsO = 0;
+                   if(countSymbolsX == 4){
+                       return true;
+                   }
+               }
+               if(grid[column][row].equals(Spot.Symbol.O.toString())){
+                   countSymbolsO++;
+                   countSymbolsX = 0;
+                   if (countSymbolsO == 4){
+                       return true;
+                   }
+               }
+           }
+       }
         return false;
     }
 }
