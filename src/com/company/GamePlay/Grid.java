@@ -81,8 +81,7 @@ public class Grid {
                    if(countSymbolsX == 4){
                        return true;
                    }
-               }
-               if(grid[column][row].equals(Spot.Symbol.O.toString())){
+               }else if(grid[column][row].equals(Spot.Symbol.O.toString())){
                    countSymbolsO++;
                    countSymbolsX = 0;
                    if (countSymbolsO == 4){
@@ -94,6 +93,97 @@ public class Grid {
                }
            }
        }
+       // Checks if you won diagonally
+        for(int column = 0; column < grid.length; column++) {
+            for (int row = 0; row < grid[1].length; row++) {
+                int column2 = column;
+                int row2 = row;
+                if (grid[column][row].equals(Spot.Symbol.X.toString())){
+                    countSymbolsX++;
+                    for(int checks = 0; checks <= 4; checks++) {
+                        if (column2 - 1 >= 0){
+                            column2--;
+                            if (row2 + 1 <= 6){
+                                row2++;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            break;
+                        }
+                        if (grid[column2][row2].equals(Spot.Symbol.X.toString())) {
+                            countSymbolsX++;
+                            if (countSymbolsX == 4) {
+                                return true;
+                            }
+                        }
+                    }
+                    column2 = column;
+                    row2 = row;
+                    for(int checks = 0; checks <= 4; checks++) {
+                        if (column2 - 1 >= 0) {
+                            column2--;
+                            if(row2 - 1 >= 0){
+                                row2--;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            break;
+                        }
+                        if (grid[column2][row2].equals(Spot.Symbol.X.toString())) {
+                            countSymbolsX++;
+                            if(countSymbolsX == 4){
+                                return true;
+                            }
+                        }
+                    }
+                    }
+                if (grid[column][row].equals(Spot.Symbol.O.toString())){
+                    countSymbolsO++;
+                    for(int checks = 0; checks <= 4; checks++) {
+                        if (column2 - 1 >= 0){
+                            column2--;
+                            if (row2 + 1 <= 6){
+                                row2++;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            break;
+                        }
+                        if (grid[column2][row2].equals(Spot.Symbol.O.toString())) {
+                            countSymbolsO++;
+                            if (countSymbolsO == 4) {
+                                return true;
+                            }
+                        }
+                    }
+                    column2 = column;
+                    row2 = row;
+                    for(int checks = 0; checks <= 4; checks++) {
+                        if (column2 - 1 >= 0) {
+                            column2--;
+                            if(row2 - 1 >= 0){
+                                row2--;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            break;
+                        }
+                        if (grid[column2][row2].equals(Spot.Symbol.O.toString())) {
+                            countSymbolsO++;
+                            if(countSymbolsO == 4){
+                                return true;
+                            }
+                        }
+                    }
+                }
+                countSymbolsO = 0;
+                countSymbolsX = 0;
+                }
+            }
         return false;
     }
 }
