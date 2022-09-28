@@ -1,5 +1,7 @@
 package com.company.GamePlay;
 
+import com.company.Design.Color;
+
 public class Grid {
     private String[][] grid;
 

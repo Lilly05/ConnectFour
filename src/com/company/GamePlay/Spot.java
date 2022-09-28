@@ -1,5 +1,7 @@
 package com.company.GamePlay;
 
+import com.company.Design.Color;
+
 import java.util.Scanner;
 
 public class Spot {
@@ -50,7 +52,7 @@ public class Spot {
 
     public void setColumn(int column){
             while(column > 6 || column < 0){
-                System.out.println("Please enter a column number between 1 and 7");
+                System.out.println(Color.RED + "Please enter a column number between 1 and 7");
                 Scanner scanner = new Scanner(System.in);
                 column = scanner.nextInt() -1;
             }
