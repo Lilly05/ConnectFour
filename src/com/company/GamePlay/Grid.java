@@ -41,7 +41,7 @@ public class Grid {
     public String toString() {
         String temp = "";
         for (int i = 0; i < grid.length; i++){
-            for (int j = 0; j < grid[i + 0].length; j++){
+            for (int j = 0; j < grid[i].length; j++){
                 temp += grid[i][j] + "    ";
             }
             temp += "\n";
